@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer, NavigationProp, ParamListBase } from '@react-navigation/native';
-import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
