@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer, NavigationProp, ParamListBase } from '@react-navigation/native';
+import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
-const HomeScreen = ({ navigation }) => {
+interface NavProps {
+  navigation: NavigationProp<ParamListBase>;
+}
+
+const HomeScreen:React.FC<NavProps> = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>
@@ -33,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-const DetailScreen = ({ navigation }) => {
+const DetailScreen:React.FC<NavProps> = ({ navigation }) => {
   return (
     <View>
       <Text style={styles.text}>
@@ -62,7 +66,7 @@ const DetailScreen = ({ navigation }) => {
   );
 };
 
-const MyStack = () => {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -97,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyStack;
+export default App;
